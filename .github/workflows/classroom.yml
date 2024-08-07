@@ -15,11 +15,14 @@ jobs:
       uses: actions/checkout@v4
     - name: T1
       id: t1
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: T1
         setup-command: ''
         command: python testpng.py
+        input: ''
+        expected-output: "[\\w,\\W]*True[\\w,\\W]*"
+        comparison-method: regex
         timeout: 10
         max-score: 1
     - name: Autograding Reporter
